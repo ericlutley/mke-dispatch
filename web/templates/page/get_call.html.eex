@@ -8,10 +8,6 @@
       <span><%= @call.call_id %></span>
     </div>
     <div class="call-details-item">
-      <span>Call Time</span>
-      <span><%= format_time(@call.time) %></span>
-    </div>
-    <div class="call-details-item">
       <span>Call Location</span>
       <span><%= @call.location %></span>
     </div>
@@ -38,6 +34,10 @@
           <td class="time"><%= in_time_zone(call.inserted_at, "America/Chicago") %></td>
         </tr>
       <% end %>
+      <tr>
+        <td>Call reported</td>
+        <td><%= format_time(@call.time) %></td>
+      </tr>
     </tbody>
   </table>
 

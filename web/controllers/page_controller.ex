@@ -6,7 +6,7 @@ defmodule MkePolice.PageController do
   def get_call(conn, %{"id" => id}) do
     calls = Repo.all(from(call in Call,
       where: call.call_id == ^id,
-      order_by: [asc: call.time, asc: call.inserted_at]
+      order_by: [asc: call.time, desc: call.inserted_at]
     ))
 
     render conn, "get_call.html", call: Enum.at(calls, 0), calls: calls
