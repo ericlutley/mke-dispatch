@@ -7,4 +7,12 @@ defmodule MkePolice.PageView do
     |> Timex.parse!("{YYYY}-{0M}-{0D}T{h24}:{m}:{s}")
     |> Timex.format!("{h12}:{m} {am}")
   end
+
+  def in_time_zone(datetime, timezone) do
+    tz = Timex.Timezone.get(timezone, Timex.now)
+
+    datetime
+    |> Timex.Timezone.convert(tz)
+    |> Timex.format!("{h12}:{m} {am}")
+  end
 end

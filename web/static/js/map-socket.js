@@ -123,6 +123,10 @@ function generatePopup(call) {
     <div class="popup"">
       <table>
         <tr>
+          <td>ID</td>
+          <td><a href="/calls/${call.call_id}" target="_blank">${call.call_id}</a></td>
+        </tr>
+        <tr>
           <td>Type</td>
           <td>${call.nature}</td>
         </tr>

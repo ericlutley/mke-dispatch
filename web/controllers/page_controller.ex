@@ -4,9 +4,12 @@ defmodule MkePolice.PageController do
   alias MkePolice.Call
 
   def get_call(conn, %{"id" => id}) do
-    calls = Repo.all(from(call in Call, where: call.call_id == ^id, order_by: [asc: call.time]))
+    calls = Repo.all(from(call in Call,
+      where: call.call_id == ^id,
+      order_by: [asc: call.time, asc: call.inserted_at]
+    ))
 
-    render conn, "get_call.html", calls: calls
+    render conn, "get_call.html", call: Enum.at(calls, 0), calls: calls
   end
 
   def index(conn, %{"start" => start_date, "end" => end_date}) do

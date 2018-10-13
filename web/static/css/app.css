@@ -66,3 +66,48 @@
 .popup table td {
   padding: 8px!important;
 }
+
+.call-page-container {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 900px;
+}
+
+.call-details {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.call-details-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.call-details-item span {
+  white-space: nowrap;
+}
+
+.call-details-item span:first-child {
+  font-weight: bold;
+}
+
+.call-details-item span + span {
+  padding: 0 0 0 1rem;
+}
+
+.call-updates {
+  margin: 2rem auto;
+}
+
+.call-updates td {
+  white-space: nowrap;
+}
+
+.call-map {
+  height: 400px;
+  margin: 0 auto;
+  width: 400px;
+}
