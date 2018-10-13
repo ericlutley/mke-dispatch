@@ -3,6 +3,12 @@ defmodule MkePolice.PageController do
 
   alias MkePolice.Call
 
+  def get_call(conn, %{"id" => id}) do
+    calls = Repo.all(from(call in Call, where: call.call_id == ^id, order_by: [asc: call.time]))
+
+    render conn, "get_call.html", calls: calls
+  end
+
   def index(conn, %{"start" => start_date, "end" => end_date}) do
 
     start_date = Timex.parse!(start_date, "{ISO:Extended}")

@@ -20,6 +20,8 @@ defmodule MkePolice.Router do
     get "/csv", PageController, :csv
     get "/map", PageController, :map
 
+    get "/calls/:id", PageController, :get_call
+
     get "/elm", PageController, :elm
   end
 

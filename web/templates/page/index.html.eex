@@ -39,7 +39,7 @@
     <tbody>
       <%= Enum.map @calls, fn(call) -> %>
         <tr data-id="<%= call.id %>">
-          <td class="call_id"><%= call.call_id %></td>
+          <td class="call_id"><%= link(call.call_id, to: "/calls/#{call.call_id}") %></td>
           <td class="time"><%= format_time(call.time)  %></td>
           <td class="location"><%= call.location %></td>
           <td class="nature"><%= call.nature %></td>
